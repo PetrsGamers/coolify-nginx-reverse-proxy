@@ -6,3 +6,5 @@ services:
       dockerfile: Dockerfile
     environment:
       - PROXY_HOST=${PROXY_HOST}
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
