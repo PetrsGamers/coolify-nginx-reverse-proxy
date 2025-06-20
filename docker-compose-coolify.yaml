@@ -2,10 +2,11 @@ version: '3.7'
 services:
   nginx-proxy:
     build:
-        context: .
-        dockerfile: Dockerfile
-        args:
-          CONF_TYPE: ${CONF_TYPE:-default}
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CONF_TYPE: ${CONF_TYPE:-default}
+    network_mode: host
     environment:
       - PROXY_HOST=${PROXY_HOST}
     extra_hosts:
